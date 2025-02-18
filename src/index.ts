@@ -1,14 +1,20 @@
-
 import express from 'express';
+import { UserService } from './services/UserService';
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
+// Check if the server is running
+app.get('/login', (req, res) => {
+    res.send('200');
+});
+
+// Handles login
 app.post('/login', (req, res) => {
-    // Handle login logic here
-    res.send('Login endpoint');
+    const user = new UserService
+    res.send(req.body);
 });
 
 app.listen(port, () => {
