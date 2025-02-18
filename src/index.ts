@@ -21,12 +21,30 @@ app.get('/login', (req, res) => {
 
 // Handles login
 app.post('/login', (req, res) => {
-    const user = new UserService
-    res.send(req.body);
+
+    const {
+        body,
+        headers,
+    } = req;
+
+    const { username, password } = body;
+
+    // validate username and password are not empty
+    if (!username || !password) {
+        res.status(400).send({
+            error: 'Missing username or password'
+        });
+    }
+
+    // const user = new UserService
+    const ip = req.ip // for debuging
+
+    res.send({
+        body, headers, ip
+    });
 });
 
 app.listen(port, '0.0.0.0', () => {
     console.log(`Server is running on port ${port}`);
 });
 
-console.log('hello world');
