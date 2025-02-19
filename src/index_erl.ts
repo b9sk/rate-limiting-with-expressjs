@@ -1,3 +1,7 @@
+/***
+ * 'express-rate-limit' не подходит, будет использован express-brute
+ */
+
 import express, { Request, Response, NextFunction } from 'express';
 import rateLimit from 'express-rate-limit';
 
