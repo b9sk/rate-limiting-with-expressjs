@@ -1,3 +1,11 @@
+## Requirments
+- Debian 12
+- Nodejs 18
+
+## Getting started
+- `npm i`
+- `npm run watch:vanilla` - no 3rd party
+
 ## TODO
 
 ### Main example without modules
