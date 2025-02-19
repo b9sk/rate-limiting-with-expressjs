@@ -1,5 +1,4 @@
 import express from 'express';
-import { UserService } from './services/UserService';
 
 const app = express();
 const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
