@@ -1,3 +1,9 @@
+/***
+ * Rate Limiter with Time Bucketing method with no 3rd party libs.
+ * No DB & Redis, just in-memory.
+ * 
+ * See `:vanilla` in package.json script section
+ */
 import express from 'express';
 
 const app = express();
@@ -14,7 +20,11 @@ app.set('trust proxy', (ip: string) => {
     return false;
 });
 
-// Конфигурация лимитов
+/***
+ * Тестовое начинается тут
+ */
+
+// Конфигурация лимитов (без .env, чтобы секономить время)
 const X_MINUTES = 5 * 60 * 1000; // X минут (aka max attemt limit)
 const Y_ATTEMPTS = 5; // Y неудачных попыток
 const Z_BLOCK_TIME = 1 * 60 * 1000; // время блокировки Z минут
