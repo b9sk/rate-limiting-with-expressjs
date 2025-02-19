@@ -6,7 +6,7 @@ const port = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
 app.use(express.json());
 
 app.set('trust proxy', (ip: string) => {
-    if (ip === '127.0.0.1' || ip === '::1') return true // Localhost
+    if (ip === '127.0.0.1') return true // Localhost
     if (ip.startsWith('172.') || ip.startsWith('10.') || ip.startsWith('192.168.')) {
         return true // Trust Docker networks
     }
