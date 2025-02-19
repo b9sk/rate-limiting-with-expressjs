@@ -4,7 +4,7 @@
 
 ## Getting started
 - `npm i`
-- `npm run watch:vanilla` - no 3rd party
+- `npm run watch` - no 3rd party
 
 ## TODO
 
